@@ -1,6 +1,6 @@
 <?php
 
-namespace LuciferDingTalk\Contact;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Contact;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

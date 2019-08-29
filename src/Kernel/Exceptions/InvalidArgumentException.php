@@ -1,6 +1,6 @@
 <?php
 
-namespace LuciferDingTalk\Kernel\Exceptions;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Exceptions;
 
 class InvalidArgumentException extends Exception
 {

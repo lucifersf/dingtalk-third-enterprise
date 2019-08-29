@@ -1,6 +1,6 @@
 <?php
 
-namespace LuciferDingTalk\Kernel\Providers;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Providers;
 
 use Monolog\Logger;
 use Pimple\Container;
@@ -18,7 +18,7 @@ class LoggerServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         isset($pimple['logger']) || $pimple['logger'] = function ($app) {
-            return new Logger('LuciferDingTalk');
+            return new Logger('LuciferDingTalkThirdPartyEnterprise');
         };
     }
 }

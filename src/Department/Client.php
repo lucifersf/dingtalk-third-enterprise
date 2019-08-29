@@ -1,8 +1,8 @@
 <?php
 
-namespace LuciferDingTalk\Department;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Department;
 
-use LuciferDingTalk\Kernel\BaseClient;
+use Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\BaseClient;
 
 class Client extends BaseClient
 {

@@ -1,6 +1,6 @@
 ## 介绍
 
-LuciferDingTalk 封装了钉钉第三方企业应用相关的接口。
+封装了钉钉第三方企业应用相关的接口。
 
 ## 环境要求
 
@@ -16,7 +16,7 @@ composer require lucifersf/dingtalk-third-enterprise
 ## 使用
 
 ```php
-use LuciferDingTalk\Application;
+use Lucifer\DingTalk\ThirdParty\Enterprise\Application;
 
 $config = [
             'corp_id' => 'your corp_id',

@@ -1,6 +1,6 @@
 <?php
 
-namespace LuciferDingTalk;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise;
 
 use Overtrue\Http\Support\Collection;
 use Pimple\Container;

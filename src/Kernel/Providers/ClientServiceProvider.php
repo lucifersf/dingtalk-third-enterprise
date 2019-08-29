@@ -1,8 +1,8 @@
 <?php
 
-namespace LuciferDingTalk\Kernel\Providers;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Providers;
 
-use LuciferDingTalk\Kernel\Http\Client;
+use Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Http\Client;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 

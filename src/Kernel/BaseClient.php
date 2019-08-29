@@ -1,23 +1,23 @@
 <?php
 
-namespace LuciferDingTalk\Kernel;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Kernel;
 
 class BaseClient
 {
     /**
-     * @var \LuciferDingTalk\Application
+     * @var \Lucifer\DingTalk\ThirdParty\Enterprise\Application
      */
     protected $app;
 
     /**
-     * @var \LuciferDingTalk\Kernel\Http\Client
+     * @var \Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Http\Client
      */
     protected $client;
 
     /**
      * Client constructor.
      *
-     * @param \LuciferDingTalk\Application $app
+     * @param \Lucifer\DingTalk\ThirdParty\Enterprise\Application $app
      */
     public function __construct($app)
     {

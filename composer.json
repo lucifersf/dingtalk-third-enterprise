@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LuciferDingTalk\\": "src/"
+            "Lucifer\\DingTalk\\ThirdParty\\Enterprise\\": "src/"
         }
     }
 }

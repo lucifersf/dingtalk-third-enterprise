@@ -1,6 +1,6 @@
 <?php
 
-namespace LuciferDingTalk\Kernel\Http;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Http;
 
 use Overtrue\Http\Client as BaseClient;
 use Psr\Http\Message\RequestInterface;
@@ -8,7 +8,7 @@ use Psr\Http\Message\RequestInterface;
 class Client extends BaseClient
 {
     /**
-     * @var \LuciferDingTalk\Application
+     * @var \Lucifer\DingTalk\ThirdParty\Enterprise\Application
      */
     protected $app;
 
@@ -20,7 +20,7 @@ class Client extends BaseClient
     ];
 
     /**
-     * @param \LuciferDingTalk\Application $app
+     * @param \Lucifer\DingTalk\ThirdParty\Enterprise\Application $app
      */
     public function __construct($app)
     {

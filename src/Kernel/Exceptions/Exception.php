@@ -1,6 +1,6 @@
 <?php
 
-namespace LuciferDingTalk\Kernel\Exceptions;
+namespace Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Exceptions;
 
 use Exception as BaseException;
 
