@@ -103,6 +103,19 @@ class Client extends BaseClient
     }
 
     /**
+     * 查询管理员是否具备管理某个应用的权限
+     *
+     * @param $userId
+     * @param $appId
+     *
+     * @return mixed
+     */
+    public function checkAccessMangerApp($userId, $appId)
+    {
+        return $this->client->get('user/can_access_microapp', compact('userId', 'appId'));
+    }
+
+    /**
      * 根据 Unionid 获取 Userid
      *
      * @param string $unionid
