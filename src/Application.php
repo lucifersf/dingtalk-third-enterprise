@@ -17,7 +17,6 @@ class Application extends Container
         Department\ServiceProvider::class,
         Kernel\Providers\ClientServiceProvider::class,
         Kernel\Providers\LoggerServiceProvider::class,
-        Kernel\Providers\RequestServiceProvider::class,
     ];
 
     /**
