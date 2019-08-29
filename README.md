@@ -10,7 +10,7 @@ LuciferDingTalk 封装了钉钉第三方企业应用相关的接口。
 ## 安装
 
 ```bash
-composer require lucifer/dingtalk-third-enterprise:^1.0
+composer require lucifersf/dingtalk-third-enterprise
 ```
 
 ## 使用
