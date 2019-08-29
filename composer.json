@@ -1,0 +1,27 @@
+{
+    "name": "lucifersf/dingtalk-third-enterprise",
+    "description": "钉钉三方企业应用",
+    "keywords": [
+        "dingtalk",
+        "钉钉三方企业应用"
+
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lucifer",
+            "email": "406170189@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "overtrue/http": "^1.1.2",
+        "pimple/pimple": "^3.0",
+        "monolog/monolog": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "LuciferDingTalk\\": "src/"
+        }
+    }
+}
