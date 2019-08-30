@@ -19,6 +19,8 @@ class Client extends BaseClient
         'base_uri' => 'https://oapi.dingtalk.com',
     ];
 
+    protected $accessToken;
+
     /**
      * @param \Lucifer\DingTalk\ThirdParty\Enterprise\Application $app
      */
@@ -37,18 +39,29 @@ class Client extends BaseClient
         static::$httpConfig = array_merge(static::$httpConfig, $config);
     }
 
+    protected function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+    }
+
     /**
      * @param $accessToken
      * @return $this
      */
     public function withAccessTokenMiddleware($accessToken)
     {
-        $middleware = function (callable $handler) use ($accessToken) {
-            return function (RequestInterface $request, array $options) use ($handler, $accessToken) {
+        $this->setAccessToken($accessToken);
+
+        if (isset($this->getMiddlewares()['access_token'])) {
+            return $this;
+        }
+
+        $middleware = function (callable $handler)  {
+            return function (RequestInterface $request, array $options) use ($handler) {
                 parse_str($request->getUri()->getQuery(), $query);
 
                 $request = $request->withUri(
-                    $request->getUri()->withQuery(http_build_query(['access_token' => $accessToken] + $query))
+                    $request->getUri()->withQuery(http_build_query(['access_token' => $this->accessToken] + $query))
                 );
 
                 return $handler($request, $options);

@@ -31,7 +31,7 @@ class BaseClient
      */
     public function withAccessToken($accessToken)
     {
-        $this->client = $this->client->withAccessTokenMiddleware($accessToken);
+        $this->client->withAccessTokenMiddleware($accessToken);
 
         return $this;
     }
