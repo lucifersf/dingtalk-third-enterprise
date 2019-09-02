@@ -10,27 +10,26 @@ class Client extends BaseClient
      * 获取企业凭证
      *
      * @param string $suiteTicket
+     * @param string $corpId
      *
      * @return mixed
      */
-    public function getAccessToken($suiteTicket)
+    public function getAccessToken($suiteTicket, $corpId)
     {
-        $params = ['auth_corpid' => $this->app['config']->get('corp_id'),];
-
-        return $this->client->postJson('service/get_corp_token', $params, $this->makeQuery($suiteTicket));
+        return $this->client->postJson('service/get_corp_token', ['auth_corpid' => $corpId], $this->makeQuery($suiteTicket));
     }
 
     /**
      * 获取企业授权信息
      *
      * @param string $suiteTicket
+     * @param string $corpId
      *
      * @return mixed
      */
-    public function getEnterprise($suiteTicket)
+    public function getEnterprise($suiteTicket, $corpId)
     {
-        $params = ['auth_corpid' => $this->app['config']->get('corp_id'),];
-        return $this->client->postJson('service/get_auth_info', $params, $this->makeQuery($suiteTicket));
+        return $this->client->postJson('service/get_auth_info', ['auth_corpid' => $corpId], $this->makeQuery($suiteTicket));
     }
 
     /**
@@ -38,13 +37,14 @@ class Client extends BaseClient
      *
      * @param string $suiteTicket
      * @param int $agentId
+     * @param string $corpId
      *
      * @return mixed
      */
-    public function getAgent($suiteTicket, $agentId)
+    public function getAgent($suiteTicket, $agentId, $corpId)
     {
         $params = [
-            'auth_corpid' => $this->app['config']->get('corp_id'),
+            'auth_corpid' => $corpId,
             'suite_key' => $this->app['config']->get('suite_key'),
             'agentid' => $agentId,
         ];

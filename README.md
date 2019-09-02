@@ -19,7 +19,6 @@ composer require lucifersf/dingtalk-third-enterprise
 use Lucifer\DingTalk\ThirdParty\Enterprise\Application;
 
 $config = [
-            'corp_id' => 'your corp_id',
             'suite_key' => 'your suite_key',
             'suite_secret' => 'your suite_secret'
         ];
@@ -27,7 +26,7 @@ $config = [
 $app = new Application($config);
 
 //获取企业凭证
-$app->auth->getAccessToken($suiteTicket);
+$app->auth->getAccessToken($suiteTicket, $corpId);
 
 //第三方企业应用免登获取用户userid
 $app->user->withAccessToken($accessToken)->getUserId($code);
