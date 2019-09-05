@@ -14,8 +14,6 @@ class BaseClient
      */
     protected $client;
 
-    protected $query;
-
     /**
      * Client constructor.
      *
