@@ -3,7 +3,6 @@
 namespace Lucifer\DingTalk\ThirdParty\Enterprise\Kernel\Http;
 
 use Overtrue\Http\Client as BaseClient;
-use Psr\Http\Message\RequestInterface;
 
 class Client extends BaseClient
 {
@@ -39,37 +38,40 @@ class Client extends BaseClient
         static::$httpConfig = array_merge(static::$httpConfig, $config);
     }
 
-    protected function setAccessToken($accessToken)
-    {
-        $this->accessToken = $accessToken;
-    }
-
     /**
      * @param $accessToken
      * @return $this
      */
-    public function withAccessTokenMiddleware($accessToken)
+    public function withAccessToken($accessToken)
     {
-        $this->setAccessToken($accessToken);
-
-        if (isset($this->getMiddlewares()['access_token'])) {
-            return $this;
-        }
-
-        $middleware = function (callable $handler)  {
-            return function (RequestInterface $request, array $options) use ($handler) {
-                parse_str($request->getUri()->getQuery(), $query);
-
-                $request = $request->withUri(
-                    $request->getUri()->withQuery(http_build_query(['access_token' => $this->accessToken] + $query))
-                );
-
-                return $handler($request, $options);
-            };
-        };
-
-        $this->pushMiddleware($middleware, 'access_token');
+        $this->accessToken = $accessToken;
 
         return $this;
     }
+
+    /**
+     * @param string $url
+     * @param array $query
+     * @return mixed
+     */
+    public function get(string $url, array $query = [])
+    {
+        $query['access_token'] = $this->accessToken;
+
+        return parent::get($url, $query);
+    }
+
+    /**
+     * @param string $url
+     * @param array $data
+     * @param array $query
+     * @return mixed
+     */
+    public function postJson(string $url, array $data = [], array $query = [])
+    {
+        $query['access_token'] = $this->accessToken;
+
+        return parent::postJson($url, $data, $query);
+    }
+
 }
