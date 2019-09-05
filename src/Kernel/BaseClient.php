@@ -14,6 +14,8 @@ class BaseClient
      */
     protected $client;
 
+    protected $query;
+
     /**
      * Client constructor.
      *
@@ -31,7 +33,7 @@ class BaseClient
      */
     public function withAccessToken($accessToken)
     {
-        $this->client->withAccessTokenMiddleware($accessToken);
+        $this->client->withAccessToken($accessToken);
 
         return $this;
     }
