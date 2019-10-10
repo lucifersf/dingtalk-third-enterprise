@@ -52,6 +52,14 @@ class Client extends BaseClient
     }
 
     /**
+     * @return mixed
+     */
+    public function getJsapiTicket()
+    {
+        return $this->client->get('get_jsapi_ticket');
+    }
+
+    /**
      * 计算签名
      *
      * @param int $timestamp
