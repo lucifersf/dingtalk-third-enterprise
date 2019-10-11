@@ -15,6 +15,7 @@ class Application extends Container
         User\ServiceProvider::class,
         Contact\ServiceProvider::class,
         Department\ServiceProvider::class,
+        Conversation\ServiceProvider::class,
         Kernel\Providers\ClientServiceProvider::class,
         Kernel\Providers\LoggerServiceProvider::class,
     ];
