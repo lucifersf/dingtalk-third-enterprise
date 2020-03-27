@@ -67,6 +67,18 @@ class Client extends BaseClient
      * @param array $query
      * @return mixed
      */
+    public function postQuery(string $url, array $data = [], array $query = [])
+    {
+        $query['access_token'] = $this->accessToken;
+        return $this->request($url, 'POST', ['form_params' => $data, 'query' => $query]);
+    }
+
+    /**
+     * @param string $url
+     * @param array $data
+     * @param array $query
+     * @return mixed
+     */
     public function postJson(string $url, array $data = [], array $query = [])
     {
         $query['access_token'] = $this->accessToken;
